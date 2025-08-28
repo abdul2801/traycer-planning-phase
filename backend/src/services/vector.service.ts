@@ -4,8 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 // MOCK EMBEDDING FUNCTION
-// In a real app, this would be a call to an embeddings API (e.g., Google's).
-// It must produce a vector with the same number of dimensions as your Pinecone index.
+// In a real app, matches dimensionality of the db
 const getEmbeddings = async (text: string): Promise<number[]> => {
   console.log(`(Mock) Generating embedding for: "${text.substring(0, 20)}..."`);
   const vector = Array.from({ length: 8 }, (_, i) => {
